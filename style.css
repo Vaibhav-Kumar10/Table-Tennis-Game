@@ -1,0 +1,89 @@
+:root {
+    --color-bg-light: #f9f9f9;
+    --color-bg-dark: #222;
+    --color-table-light: #4caf50;
+    --color-table-dark: #218c33;
+    --color-net-light: #fff;
+    --color-net-dark: #bbb;
+    --color-text-light: #222;
+    --color-text-dark: #f9f9f9;
+    --color-boarder: #222;
+    --color-btn-light: #eee;
+    --color-btn-dark: #444;
+}
+
+body[data-theme="light"] {
+    background: var(--color-bg-light);
+    color: var(--color-text-light);
+    transition: background 0.3s, color 0.3s;
+}
+body[data-theme="dark"] {
+    background: var(--color-bg-dark);
+    color: var(--color-text-dark);
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 15px 0 10px 0;
+    font-family: Arial, sans-serif;
+}
+.game-controls label {
+    font-size: 1rem;
+}
+
+.game-controls select, .game-controls button {
+    padding: 4px 10px;
+    margin-left: 4px;
+    border-radius: 4px;
+    border: 1px solid var(--color-boarder);
+    font-size: 1rem;
+}
+body[data-theme="dark"] .game-controls button,
+body[data-theme="dark"] .game-controls select {
+    background: var(--color-btn-dark);
+    color: var(--color-text-dark);
+    border: 1px solid #666;
+}
+body[data-theme="light"] .game-controls button,
+body[data-theme="light"] .game-controls select {
+    background: var(--color-btn-light);
+    color: var(--color-text-light);
+    border: 1px solid #ccc;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    gap: 10px;
+}
+
+.canvas-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    background: var(--color-table-light);
+    border: 3px solid var(--color-boarder);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+body[data-theme="dark"] #gameCanvas {
+    background: var(--color-table-dark);
+}
+
+@media (max-width: 800px) {
+    #gameCanvas {
+        width: 95vw !important;
+        height: 55vw !important;
+    }
+}
